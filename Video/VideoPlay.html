@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+        .video-player {
+            margin: 20px 0;
+            border: 2px solid #4CAF50;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #fff;
+            display: inline-block;
+            width: 80%;
+            max-width: 800px;
+        }
+        video {
+            width: 100%;
+            outline: none;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .active {
+            background-color: #ff9800;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>প্রাথমিক স্তরের জন্য কিছু নির্বাচিত ভিডিও</h3>
+
+    <div id="button-container">
+        <button onclick="playVideo('Video/PhonicsSong.mp4', this)">Phonics Song</button>
+        <button onclick="playVideo('video/chragan.mp4', this)">ছড়া গান</button>
+        <button onclick="playVideo('video/chotoder dance.mp4', this)">ফোক গান/দক্ষিনা</button>
+        <button onclick="playVideo('video/surah iklas.mp4', this)">সুরা ইখলাস</button>
+        <button onclick="playVideo('video/Raise your right hand.mp4', this)">রেইজ হ্যান্ড</button>
+        <button onclick="playVideo('video/Chal chal chal.mp4', this)">চল চল চল</button>
+        <button onclick="playVideo('video/duldul duloni.mp4', this)">দুল দুল দুলুনি</button>
+        <button onclick="playVideo('video/Amra Sundor Amra Shishu.mp4', this)">আমরা শিশু</button>
+        <button onclick="playVideo('video/O Dhan Bhani Re.mp4', this)">ও ধান ভানি</button>
+        <button onclick="playVideo('Video/Megher Kole Rod Heseche.mp4', this)">মেঘের কোলে রোদ </button>
+    </div>
+
+    <div id="video-player" class="video-player">
+        <video id="player" controls>
+            <source id="video-source" src="video/video1.mp4" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+    </div>
+        <button onclick="playVideo('video/Komola Nritto Kore.mp4', this)">কমলা নৃত্য করে</button>
+        <button onclick="playVideo('video/chare de nouka maji.mp4', this)">ছেড়ে দে নৌকা </button>
+	    <button onclick="playVideo('video/Age Ki Sundor Din.mp4', this)">আগে কি সুন্দর </button>
+	    <button onclick="playVideo('video/amora sobi raja.mp4', this)">আমরা সবাই রাজা</button>
+	    <button onclick="playVideo('video/Pindare Polasher Bon ll Cover dence ll so wonderfull ll.mp4', this)">পিন্দারে পলাশের বন</button>
+	    <button onclick="playVideo('video/video10.mp4', this)">Play Video 16</button>
+	    <button onclick="playVideo('video/video10.mp4', this)">Play Video 17</button>
+	    <button onclick="playVideo('video/video10.mp4', this)">Play Video 18</button>
+	    <button onclick="playVideo('video/video10.mp4', this)">Play Video 19</button>
+	    <button onclick="playVideo('video/video10.mp4', this)">Play Video 20</button>
+	<script>
+        function playVideo(src, button) {
+            var player = document.getElementById('player');
+            var videoSource = document.getElementById('video-source');
+            var buttons = document.querySelectorAll('button');
+
+            videoSource.src = src;
+            player.load();
+            player.play();
+
+            // Reset the color of all buttons
+            buttons.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+
+            // Set the active color to the clicked button
+            button.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
